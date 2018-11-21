@@ -17,8 +17,9 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:id="@+id/rv_z"
+        android:visibility="gone"
         android:layout_margin="@dimen/dp_10"
-        android:layout_height="80dp">
+        android:layout_height="180dp">
     </android.support.v7.widget.RecyclerView>
 
 

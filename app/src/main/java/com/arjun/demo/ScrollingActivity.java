@@ -12,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -78,6 +79,7 @@ public class ScrollingActivity extends AppCompatActivity {
         rv = findViewById(R.id.rv);
         rv.setLayoutManager(layout);
 
+
         LinearLayoutManager layoutV = new LinearLayoutManager(this);
         layoutV.setOrientation(LinearLayoutManager.VERTICAL);
         rv_v = findViewById(R.id.rvv);
@@ -86,24 +88,23 @@ public class ScrollingActivity extends AppCompatActivity {
         final List list = new ArrayList();
         for (int i = 0; i < 10; i++) {
             Item item = new Item();
-            item.label = "index " + i;
+            item.label = "index rv_v " + i;
             list.add(item);
         }
-        MyAdapter myAdapter = new MyAdapter(list);
+        MyAdapter myAdapter = new MyAdapter(list,ScrollingActivity.this);
         rv.setAdapter(myAdapter);
 
         myAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+
+
                 Toast.makeText(ScrollingActivity.this,    ((Item) adapter.getItem(position)).label.toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
-
         MyAdapterV myAdapterV = new MyAdapterV(list,ScrollingActivity.this);
         rv_v.setAdapter(myAdapterV);
-
-
     }
 
     @Override

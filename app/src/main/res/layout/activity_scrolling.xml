@@ -71,4 +71,10 @@
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
+
+    <com.arjun.demo.ScrollView
+        android:text="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"></com.arjun.demo.ScrollView>
+
 </android.support.design.widget.CoordinatorLayout>
